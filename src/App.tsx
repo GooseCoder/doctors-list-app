@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Box, Button, Grommet, Header, Menu } from "grommet";
+import ListDoctors from "./ListDoctors";
+import { DoctorProvider } from "./context/DoctorContext";
+import FilterBar from "./FilterBar";
+import { Home } from "grommet-icons";
 
-function App() {
+const theme = {
+  global: {
+    colors: {
+      brand: "#228BE6",
+    },
+    font: {
+      family: "Roboto",
+      size: "18px",
+      height: "20px",
+    },
+  },
+};
+
+const App = (): React.ReactElement => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Grommet theme={theme}>
+      <DoctorProvider>
+        <Header background="brand">
+          <Button icon={<Home />} hoverIndicator />
+          <Menu label="My Account" items={[{ label: "logout" }]} />
+        </Header>
+        <Box gap="small" margin="small">
+          <FilterBar />
+          <ListDoctors />
+        </Box>
+      </DoctorProvider>
+    </Grommet>
   );
-}
+};
 
 export default App;
