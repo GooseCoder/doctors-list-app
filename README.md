@@ -8,7 +8,7 @@ It's a next generation search and appointment management ("comming soon...") pla
 
 Load the app, apply any filters you want, filters are on top, enjoy:
 
-[![Watch the video](./docs/doc-search.png)](./docs/doc-search.mp4)
+[![Watch the video](./docs/doc-search.gif)](./docs/doc-search.mp4)
 
 ## Development Doc
 
